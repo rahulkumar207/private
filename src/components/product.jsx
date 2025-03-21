@@ -11,7 +11,7 @@ const Products = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:3001/v1/products/getProducts');
+        const response = await fetch('https://cmtai-b.vercel.app/v1/products/getProducts');
         const result = await response.json();
         
         if (result.status === "success" && Array.isArray(result.data)) {

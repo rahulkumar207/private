@@ -52,18 +52,12 @@ const BlogDetails = () => {
             <div className="row">
               <div className="col-xl-12">
               <ul className="blog-meta mb-15 wow fadeInUp delay-0-2s">
-                  <li>
-                    <i className="fal fa-user-alt" />
-                    <a href="#">{blog.author || "Unknown Author"}</a>
-                  </li>
+                  
                   <li>
                     <i className="far fa-calendar-alt" />
                     <a href="#">{new Date(blog.createdAt).toLocaleDateString() || "Unknown Date"}</a>
                   </li>
-                  <li>
-                    <i className="far fa-comments" />
-                    <a href="#">{`Comment (${blog.commentsCount || 0})`}</a>
-                  </li>
+                 
                 </ul>
                 <h2 className="page-title wow fadeInUp delay-0-3s">
                   {blog.title || "Untitled"}

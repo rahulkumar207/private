@@ -18,7 +18,7 @@ function ProductDetails() {
       if (!id) return;
 
       try {
-        const response = await fetch(`https://private-tym1.vercel.app/v1/products/getProductById/${id}`);
+        const response = await fetch(`https://cmtai-b.vercel.app/v1/products/getProductById/${id}`);
         const result = await response.json();
         
         if (result.status === "success" && result.data) {

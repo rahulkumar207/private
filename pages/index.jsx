@@ -1,9 +1,8 @@
 import Layout from "@/src/layout/Layout";
-import { sliderProps } from "@/src/sliderProps";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import { Swiper, SwiperSlide } from "swiper/react"; 
 import Product from "@/src/components/product";
+import Card from "@/src/components/card";
 
 
 const Counter = dynamic(() => import("@/src/components/Counter"), {
@@ -321,6 +320,7 @@ const Index2 = () => {
       {/* Service Style Four start */}
       <Product />
       {/* Service Style Four end */}
+      <Card />
 
       {/* Headline area start */}
       <div className="headline-area bgc-primary pt-80 pb-65">

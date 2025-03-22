@@ -9,6 +9,33 @@ const Counter = dynamic(() => import("@/src/components/Counter"), {
   ssr: false,
 });
 
+const clientLogos = [
+  "/assets/images/client-logos/1.png",
+  "/assets/images/client-logos/2.png",
+  "/assets/images/client-logos/3.png",
+  "/assets/images/client-logos/4.png",
+  "/assets/images/client-logos/5.png",
+  "/assets/images/client-logos/6.png",
+  "/assets/images/client-logos/7.png",
+  "/assets/images/client-logos/8.png",
+  "/assets/images/client-logos/9.png",
+  "/assets/images/client-logos/10.png",
+  "/assets/images/client-logos/11.png",
+  "/assets/images/client-logos/12.png",
+  "/assets/images/client-logos/13.png",
+  "/assets/images/client-logos/14.png",
+  "/assets/images/client-logos/15.png",
+  "/assets/images/client-logos/16.png",
+  "/assets/images/client-logos/17.png",
+  "/assets/images/client-logos/18.png",
+  "/assets/images/client-logos/19.png",
+  "/assets/images/client-logos/20.png",
+  "/assets/images/client-logos/21.png",
+  "/assets/images/client-logos/22.png",
+  "/assets/images/client-logos/23.png",
+  "/assets/images/client-logos/24.png",
+];
+
 const Index2 = () => {
   return (
     <Layout footer={2} dark>
@@ -184,7 +211,7 @@ const Index2 = () => {
       </section>
       {/* Skills Area End */}
 
-      <section className="row justify-content-center headline-area pt-50" style={{ backgroundImage: "linear-gradient(black, #009da6, black)",marginTop: "90px" }}>
+      <section className="row justify-content-center headline-area pt-50" style={{ backgroundImage: "linear-gradient(black, #009da6, black)", marginTop: "90px" }}>
         <div className="col-xl-7 col-lg-9 wow fadeInUp delay-0-2s">
           <div className="section-title style-two text-center mb-45">
             <h3 className="mb-15" style={{ color: "black", fontSize: "30px" }}>Things We Do At CMT AI...</h3>
@@ -667,52 +694,18 @@ const Index2 = () => {
           </div>
         </div>
       </section>
-      {/* Why Choose Us end */}
-      {/* Headline area start */}
-      {/* <div className="headline-area style-two bgc-primary pt-80 pb-65">
-        <div className="container-fluid">
-          <div className="headline-wrap marquee">
-            <span>
-              <span className="marquee-item">
-                <i className="fas fa-star-of-life" />
-                <b>Clients Say Us</b>
-              </span>
-              <span className="marquee-item">
-                <i className="fas fa-star-of-life" />
-                <b>Global Clients</b>
-              </span>
-              <span className="marquee-item">
-                <i className="fas fa-star-of-life" />
-                <b>Awards Winning</b>
-              </span>
-              <span className="marquee-item">
-                <i className="fas fa-star-of-life" />
-                <b>Clients Say Us</b>
-              </span>
-              <span className="marquee-item">
-                <i className="fas fa-star-of-life" />
-                <b>Global Clients</b>
-              </span>
-              <span className="marquee-item">
-                <i className="fas fa-star-of-life" />
-                <b>Awards Winning</b>
-              </span>
-            </span>
-          </div>
-        </div>
-      </div> */}
-      {/* Headline Area end */}
+     
       {/* Client Logo Two start */}
       <section
         className="client-logo-area"
-        style={{ paddingTop: "50px", paddingBottom: "50px", }}
+        style={{ paddingTop: "50px", paddingBottom: "50px", background: "black" }}
       >
-        <div className="container ">
+        <div className="container">
           <div
             className="section-title text-center"
             style={{ marginBottom: "60px" }}
           >
-            <h4>We Have 1520+ Global Clients</h4>
+            <h4 style={{ color: "white" }}>We Have 1520+ Global Clients</h4>
           </div>
           <div
             className="client-logo-wrap"
@@ -720,106 +713,69 @@ const Index2 = () => {
               overflow: "hidden",
               whiteSpace: "nowrap",
               position: "relative",
+              padding: "20px 0"
             }}
           >
             <div
-              className="marquee-content "
+              className="marquee-content"
               style={{
-                // display: "flex",
-                // gap: "40px",
                 animation: "marquee 20s linear infinite",
                 width: "max-content",
+                display: "inline-block"
               }}
+             
             >
-              {[...Array(2)].map((_, index) => (
-                <>
-                  <Link key={index + "-1"} legacyBehavior href="/contact">
-                    <a
-                      className="client-logo-item"
-                      style={{ display: "inline-block" }}
-                    >
+              {[...Array(2)].map((_, setIndex) => (
+                <div key={setIndex} style={{ display: "inline-block" }}>
+                  {clientLogos.map((logo, index) => (
+                    <div key={index} style={{ display: "inline-block", margin: "0 30px" }}>
                       <img
-                        src="assets/images/client-logos/client-logo1.png"
-                        alt="Client Logo"
-                        style={{ maxHeight: "80px", width: "auto" }}
+                        src={logo}
+                        alt={`Client Logo ${index + 1}`}
+                        style={{ 
+                          maxHeight: "60px", 
+                          width: "auto",
+                          transition: "all 0.3s ease"
+                        }}
                       />
-                    </a>
-                  </Link>
-                  <Link key={index + "-2"} legacyBehavior href="/contact">
-                    <a
-                      className="client-logo-item"
-                      style={{ display: "inline-block" }}
-                    >
-                      <img
-                        src="assets/images/client-logos/client-logo2.png"
-                        alt="Client Logo"
-                        style={{ maxHeight: "80px", width: "auto" }}
-                      />
-                    </a>
-                  </Link>
-                  <Link key={index + "-3"} legacyBehavior href="/contact">
-                    <a
-                      className="client-logo-item"
-                      style={{ display: "inline-block" }}
-                    >
-                      <img
-                        src="assets/images/client-logos/client-logo3.png"
-                        alt="Client Logo"
-                        style={{ maxHeight: "80px", width: "auto" }}
-                      />
-                    </a>
-                  </Link>
-                  <Link key={index + "-4"} legacyBehavior href="/contact">
-                    <a
-                      className="client-logo-item"
-                      style={{ display: "inline-block" }}
-                    >
-                      <img
-                        src="assets/images/client-logos/client-logo4.png"
-                        alt="Client Logo"
-                        style={{ maxHeight: "80px", width: "auto" }}
-                      />
-                    </a>
-                  </Link>
-                  <Link key={index + "-5"} legacyBehavior href="/contact">
-                    <a
-                      className="client-logo-item"
-                      style={{ display: "inline-block" }}
-                    >
-                      <img
-                        src="assets/images/client-logos/client-logo5.png"
-                        alt="Client Logo"
-                        style={{ maxHeight: "80px", width: "auto" }}
-                      />
-                    </a>
-                  </Link>
-                  <Link key={index + "-6"} legacyBehavior href="/contact">
-                    <a
-                      className="client-logo-item"
-                      style={{ display: "inline-block" }}
-                    >
-                      <img
-                        src="assets/images/client-logos/client-logo6.png"
-                        alt="Client Logo"
-                        style={{ maxHeight: "80px", width: "auto" }}
-                      />
-                    </a>
-                  </Link>
-                </>
+                    </div>
+                  ))}
+                </div>
               ))}
             </div>
           </div>
         </div>
         <style jsx>{`
-    @keyframes marquee {
-      from {
-        transform: translateX(0); 
-      }
-      to {
-        transform: translateX(-150%);
-      }
-    }
-  `}</style>
+          @keyframes marquee {
+            0% {
+              transform: translateX(0);
+            }
+            100% {
+              transform: translateX(-50%);
+            }
+          }
+          .client-logo-wrap {
+            position: relative;
+            overflow: hidden;
+          }
+          .client-logo-wrap::before,
+          .client-logo-wrap::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 150px;
+            height: 100%;
+            z-index: 2;
+          }
+          .client-logo-wrap::before {
+            left: 0;
+            background: linear-gradient(to right, black 0%, transparent 100%);
+          }
+          .client-logo-wrap::after {
+            right: 0;
+            background: linear-gradient(to left, black 0%, transparent 100%);
+          }
+        `}</style>
       </section>
 
 

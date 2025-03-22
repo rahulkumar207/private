@@ -4,11 +4,15 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'images.unsplash.com',
-        port: '',
-        pathname: '/**',
+        hostname: 'firebasestorage.googleapis.com',
+        pathname: '/v0/b/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      }
     ],
+    domains: ['firebasestorage.googleapis.com'],
   },
   reactStrictMode: true,
 }

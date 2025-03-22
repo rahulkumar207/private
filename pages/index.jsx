@@ -1,7 +1,7 @@
 import Layout from "@/src/layout/Layout";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import Product from "@/src/components/product";
+// import Product from "@/src/components/product";
 import Card from "@/src/components/card";
 
 
@@ -117,7 +117,7 @@ const Index2 = () => {
       </section>
       {/* Advertise Area End */}
       {/* Skills Area Start */}
-      <section className="skills-area pt-100 rpt-70 rel z-1">
+      <section className="skills-area pt-100 rpt-70 rel z-1" style={{ paddingBottom: "0px" }}>
         <div className="container container-1590">
           <div className="row justify-content-center">
             <div className="col-lg-6">
@@ -184,19 +184,28 @@ const Index2 = () => {
       </section>
       {/* Skills Area End */}
 
+      <section className="row justify-content-center headline-area pt-50" style={{ backgroundImage: "linear-gradient(black, #009da6, black)",marginTop: "90px" }}>
+        <div className="col-xl-7 col-lg-9 wow fadeInUp delay-0-2s">
+          <div className="section-title style-two text-center mb-45">
+            <h3 className="mb-15" style={{ color: "black", fontSize: "30px" }}>Things We Do At CMT AI...</h3>
+
+          </div>
+        </div>
+
+      </section>
       {/* What We Provide start */}
-      <section className="what-we-provide-area pt-130 rpt-100 rel z-1">
-        <div className="container container-1290">
-          <div className="row justify-content-center">
+      <section className="what-we-provide-area pt-70 rpt-40 rel z-1">
+        <div className="container container-1290 ">
+          {/* <div className="headline-area bgc-primary pt-80 pb-65"> */}
+
+          {/* <div className="row justify-content-center headline-area pt-50" style={{ backgroundImage: "linear-gradient(black, #00c3d1, black)" }}>
             <div className="col-xl-7 col-lg-9 wow fadeInUp delay-0-2s">
-              <div className="section-title style-two text-center mb-70">
-                <span className="sub-title mb-15">What We Provide</span>
-                <h2>
-                  Quality Service For Growth Your Branding <i>Identity</i>
-                </h2>
+              <div className="section-title style-two text-center mb-45">
+                <h3 className="mb-15" style={{ color: "black", fontSize: "30px" }}>Things We Do At CMT AI...</h3>
+
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="row">
             <div className="col-xl-4 col-md-6">
               <div
@@ -212,7 +221,7 @@ const Index2 = () => {
                   alignItems: "center",
                   justifyContent: "center",
                   borderRadius: "15px", // Rounded corners
-                  marginTop: "0px", 
+                  marginTop: "0px",
 
                 }}
               ></div>
@@ -318,7 +327,7 @@ const Index2 = () => {
       {/* What We Provide end */}
 
       {/* Service Style Four start */}
-      <Product />
+      {/* <Product /> */}
       {/* Service Style Four end */}
       <Card />
 
@@ -629,7 +638,7 @@ const Index2 = () => {
                     <div className="why-choose-item wow fadeInUp delay-0-3s">
                       <div className="why-choose-header">
                         <i className="far fa-chevron-right" />
-                        <h5>Collaborative &amp; Partnership</h5>
+                        <h5>Collaboration</h5>
                       </div>
                       <p>
                         We value long-term relationships with our clients. We see ourselves as your digital partner.
@@ -698,7 +707,7 @@ const Index2 = () => {
         className="client-logo-area"
         style={{ paddingTop: "50px", paddingBottom: "50px", }}
       >
-        <div className="container">
+        <div className="container ">
           <div
             className="section-title text-center"
             style={{ marginBottom: "60px" }}
@@ -714,7 +723,7 @@ const Index2 = () => {
             }}
           >
             <div
-              className="marquee-content"
+              className="marquee-content "
               style={{
                 // display: "flex",
                 // gap: "40px",

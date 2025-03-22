@@ -7,7 +7,7 @@ const TextSection = ({ productData }) => {
   useEffect(() => {
     if (productData) {
       setTitle(productData.title || '');
-      setDescription(productData.description || '');
+      setDescription(productData.long_description || '');
     }
   }, [productData]);
 

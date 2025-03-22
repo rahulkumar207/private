@@ -1,48 +1,61 @@
 "use client";
 
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const Card = () => {
-    const cardData = [
-        {
-            id: 1,
-            title: "Web Development",
-            description: "Create stunning, responsive websites with modern technologies",
-            image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-            features: ["React", "Next.js", "Tailwind CSS"],
-            link: "/services/web-development"
-        },
-        {
-            id: 2,
-            title: "Mobile Development",
-            description: "Build powerful mobile applications for iOS and Android",
-            image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-            features: ["React Native", "Flutter", "Native Apps"],
-            link: "/services/mobile-development"
-        },
-        {
-            id: 3,
-            title: "UI/UX Design",
-            description: "Design beautiful and intuitive user interfaces",
-            image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-            features: ["Figma", "Adobe XD", "Prototyping"],
-            link: "/services/ui-ux-design"
-        },
-        {
-            id: 4,
-            title: "Cloud Solutions",
-            description: "Scalable cloud infrastructure and deployment services",
-            image: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
-            features: ["AWS", "Azure", "Google Cloud"],
-            link: "/services/cloud-solutions"
+    const [products, setProducts] = useState([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    useEffect(() => {
+        const fetchProducts = async () => {
+            try {
+                const response = await fetch('https://cmtai-b.vercel.app/v1/products/getProducts');
+                const result = await response.json();
+                
+                if (result.status === "success" && Array.isArray(result.data)) {
+                    setProducts(result.data);
+                } else {
+                    setError("No product data found");
+                }
+            } catch (error) {
+                console.error("Error fetching products:", error);
+                setError(error.message);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchProducts();
+    }, []);
+
+    const getImageUrl = (product) => {
+        if (!product) return "https://images.unsplash.com/photo-1579546929518-9e396f3cc809";
+        
+        let url = product.thumbnail || product.image;
+        if (!url) return "https://images.unsplash.com/photo-1579546929518-9e396f3cc809";
+
+        // Check if it's a Firebase Storage URL
+        if (url.includes('firebasestorage.googleapis.com')) {
+            // Add alt=media if it's not already there
+            if (!url.includes('alt=media')) {
+                url += (url.includes('?') ? '&' : '?') + 'alt=media';
+            }
         }
-    ];
+        
+        return url;
+    };
+
+    const handleImageError = () => {
+        return "https://images.unsplash.com/photo-1579546929518-9e396f3cc809";
+    };
 
     const styles = {
         section: {
             padding: '5rem 0',
-            background: 'linear-gradient(to bottom, #111827, #000000)',
+            background: 'black',
             width: '100%',
             overflow: 'hidden'
         },
@@ -57,9 +70,8 @@ const Card = () => {
             marginBottom: '4rem'
         },
         title: {
-            fontSize: '2.5rem',
-            fontWeight: 'bold',
-            color: 'white',
+            fontSize: '30px',
+            color: '#00c3d1',
             marginBottom: '1rem'
         },
         subtitle: {
@@ -127,26 +139,6 @@ const Card = () => {
             marginBottom: '1rem',
             flexGrow: 1
         },
-        featuresList: {
-            display: 'flex',
-            flexWrap: 'wrap',
-            gap: '0.5rem',
-            marginBottom: '1rem'
-        },
-        featureItem: {
-            display: 'flex',
-            alignItems: 'center',
-            color: '#10b981',
-            fontSize: '0.75rem',
-            background: 'rgba(16, 185, 129, 0.1)',
-            padding: '0.25rem 0.5rem',
-            borderRadius: '0.25rem'
-        },
-        featureIcon: {
-            width: '0.875rem',
-            height: '0.875rem',
-            marginRight: '0.25rem'
-        },
         cardActions: {
             display: 'flex',
             justifyContent: 'space-between',
@@ -172,43 +164,70 @@ const Card = () => {
         }
     };
 
+    if (loading) {
+        return (
+            <section style={styles.section}>
+                <div style={styles.container}>
+                    <div style={{ textAlign: 'center', color: 'white' }}>Loading products...</div>
+                </div>
+            </section>
+        );
+    }
+
+    if (error) {
+        return (
+            <section style={styles.section}>
+                <div style={styles.container}>
+                    <div style={{ textAlign: 'center', color: 'red' }}>Error: {error}</div>
+                </div>
+            </section>
+        );
+    }
+
     return (
         <section style={styles.section}>
             <div style={styles.container}>
                 <div style={styles.header}>
-                    <h2 style={styles.title}>Our Product</h2>
-                    <p style={styles.subtitle}>
+                    <h2 style={styles.title}>Products We Have Developed At CMT AI</h2>
+                    {/* <p style={styles.subtitle}>
                         Discover our comprehensive range of digital solutions
-                    </p>
+                    </p> */}
                 </div>
 
                 <div style={styles.cardGrid}>
-                    {cardData.map((card) => (
-                        <div key={card.id} style={styles.cardWrapper}>
+                    {products.map((product) => (
+                        <div key={product.id} style={styles.cardWrapper}>
                             <div className="card-container" style={{ height: '100%' }}>
                                 <div className="card" style={styles.card}>
                                     <div className="card-content" style={{ position: 'relative', width: '100%', height: '100%', display: 'flex', flexDirection: 'column' }}>
                                         <div className="card-image" style={styles.cardImage}>
-                                            <Image
-                                                src={card.image}
-                                                alt={card.title}
-                                                fill
-                                                sizes="25vw"
-                                                style={{ objectFit: 'cover' }}
+                                            <img
+                                                src={getImageUrl(product)}
+                                                alt={product.title || "Product Image"}
+                                                style={{ 
+                                                    width: '100%',
+                                                    height: '100%',
+                                                    objectFit: 'cover'
+                                                }}
+                                                onError={handleImageError}
                                             />
                                             <div className="card-overlay" style={styles.cardOverlay}></div>
                                         </div>
                                         <div className="card-body" style={styles.cardBody}>
-                                            <h3 style={styles.cardTitle}>{card.title}</h3>
-                                            <p style={styles.cardDescription}>{card.description}</p>
+                                            <h3 style={styles.cardTitle}>
+                                                <Link href={`/productDetails?id=${product.id}`} style={styles.cardLink}>
+                                                    {product.title || "Untitled Product"}
+                                                </Link>
+                                            </h3>
+                                            <p style={styles.cardDescription}>{product.short_description  || "No description available."}</p>
 
                                             <div className="card-actions" style={styles.cardActions}>
-                                                <a href={card.link} style={styles.cardLink}>
-                                                    Learn More →
-                                                </a>
-                                                <button style={styles.cardButton}>
+                                                <Link href={`/productDetails?id=${product.id}`} style={styles.cardLink}>
+                                                    
+                                                </Link>
+                                                <Link href={`/productDetails?id=${product.id}`} style={styles.cardButton}>
                                                     Get Started
-                                                </button>
+                                                </Link>
                                             </div>
                                         </div>
                                     </div>

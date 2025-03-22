@@ -30,6 +30,20 @@ const Products = () => {
     fetchProducts();
   }, []);
 
+  const getImageUrl = (product) => {
+    if (product.thumbnail) {
+      return product.thumbnail;
+    }
+    if (product.image) {
+      return product.image;
+    }
+    return "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80";
+  };
+
+  const handleImageError = (e) => {
+    e.target.src = "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80";
+  };
+
   if (loading) {
     return (
       <section className="service-area-four pt-110 rpt-85 pb-100 rpb-70">
@@ -84,9 +98,9 @@ const Products = () => {
                 </div>
                 <div className="image">
                   <img
-                    src={product.thumbnail || "/assets/images/Products/default.jpg"}
+                    src={getImageUrl(product)}
                     alt={product.title || "Product Image"}
-                    onError={(e) => (e.target.src = "/assets/images/Products/default.jpg")}
+                    onError={handleImageError}
                   />
                 </div>
               </div>

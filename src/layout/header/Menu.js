@@ -28,6 +28,16 @@ const DaskTopMenu = () => {
           About Us
         </Link>
       </li>
+      <li>
+        <Link legacyBehavior href="jobPage">
+        Career
+        </Link>
+      </li>
+      <li>
+        <Link legacyBehavior href="contact">
+        Contect
+        </Link>
+      </li>
       
     </ul>
   );

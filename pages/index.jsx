@@ -1,7 +1,7 @@
 import Layout from "@/src/layout/Layout";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-// import Product from "@/src/components/product";
+import Product from "@/src/components/product";
 import Card from "@/src/components/card";
 import ServicesSection from "@/src/components/sevicesSection";
 
@@ -356,10 +356,10 @@ const Index2 = () => {
       </section>
       {/* What We Provide end */}
 
-      {/* Service Style Four start */}
-      {/* <Product /> */}
-      {/* Service Style Four end */}
-      <Card />
+      {/* Product Style Four start */}
+      <Product />
+      {/* Product Style Four end */}
+      {/* <Card /> */}
 
       {/* Headline area start */}
       <div className="headline-area bgc-primary pt-80 pb-65">

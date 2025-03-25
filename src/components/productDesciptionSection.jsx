@@ -16,7 +16,7 @@ const TextSection = ({ productData }) => {
   }
 
   return (
-    <section className="service-area-four pt-110 rpt-85 pb-100 rpb-70">
+    <section className="service-area-four rpt-85 rpb-70">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-12">

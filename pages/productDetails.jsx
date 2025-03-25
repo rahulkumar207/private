@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Layout from "@/src/layout/Layout";
 import Carousel from "@/src/components/Carousel";
 import BlockSection from '@/src/components/blockSection';
-import TextSection from '@/src/components/textSection';
+import TextSection from '@/src/components/productDesciptionSection';
 import FeatureSection from '@/src/components/featureSection';
 import { useRouter } from 'next/router';
 

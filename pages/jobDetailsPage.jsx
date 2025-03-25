@@ -94,7 +94,7 @@ const JobDetails = () => {
                 </div>
                 <div className="col-lg-6">
                   <div className="about-four-image wow fadeInUp delay-0-4s">
-                    <Image src={job.jobImage || "/assets/images/about/about-four.jpg"} alt="Job" width={600} height={400} />
+                    <Image src={job.jobImage || "/assets/images/about/jobImage.jpg"} alt="Job" width={600} height={400} />
                   </div>
                 </div>
               </div>

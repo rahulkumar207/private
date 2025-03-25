@@ -6,6 +6,8 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import Layout from "@/src/layout/Layout";
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+import { ImLocation } from "react-icons/im";
+
 
 const JobDetails = () => {
   const router = useRouter();
@@ -82,7 +84,7 @@ const JobDetails = () => {
                       <h2>{job.Title}</h2>
                     </div>
                     <span className="sub-title mb-15" style={{ color: "#00c3d1", fontSize: "18px" }}>Skills Required: </span>
-                    <ul className="pt-25 pb-20">
+                    <ul className=" pb-20">
                       {Array.isArray(job.SKILLS) && job.SKILLS.length > 0 ? (
                                                 job.SKILLS.map((skill, idx) => (
                                                     <li key={idx}>• {skill}</li>
@@ -96,7 +98,7 @@ const JobDetails = () => {
                                             )}
                     </ul>
                     <div className="about-btns">
-                      <h5>Location: {job.Location}</h5>
+                      <h5 style={{color:"#00c3d1"}}>Location: <ImLocation />  {job.Location}</h5>
                     </div>
                   </div>
                 </div>
@@ -113,7 +115,7 @@ const JobDetails = () => {
           <h5></h5>
         </div>
         <div className="container-fluid mt-4">
-        <h5 style={{marginTop: "50px"}}>Key Responsibilities:</h5>
+        <h5 style={{marginTop: "50px", color:"#00c3d1"}}>Key Responsibilities:</h5>
           <ul>
             {Array.isArray(job.Description) ? (
               job.Description.map((desc, idx) => (
@@ -143,7 +145,8 @@ const JobDetails = () => {
           </div>
           <div className="row justify-content-center" style={{ marginTop: 70, marginBottom: 70 }}>
             <div className="col-md-4 text-center">
-            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSexCX1QRBybspSefAcWthe_dFA9JLHB8mJEwgDFyrK_9-cGKA/viewform" target="_blank" rel="noopener noreferrer">                <button 
+            <Link href="https://docs.google.com/forms/d/e/1FAIpQLSexCX1QRBybspSefAcWthe_dFA9JLHB8mJEwgDFyrK_9-cGKA/viewform" target="_blank" rel="noopener noreferrer">               
+             <button 
                   className="btn" 
                   style={{ 
                     backgroundColor: 'transparent',

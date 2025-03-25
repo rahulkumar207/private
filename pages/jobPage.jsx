@@ -56,7 +56,7 @@ export default function InternshipCards() {
                                     style={{ 
                                         backgroundColor: "black", 
                                         borderColor: "#00a99d", 
-                                        borderRadius: "1rem", 
+                                        borderRadius: "1.5rem", 
                                         overflow: "hidden", 
                                         transition: "transform 0.5s", 
                                         transformStyle: "preserve-3d", 
@@ -70,10 +70,10 @@ export default function InternshipCards() {
                                                 top: "0",
                                                 right: "0",
                                                 backgroundColor: "#00A99D",
-                                                color: "black",
-                                                padding: "5px 12px",
+                                                color: "white",
+                                                padding: "10px 22px",
                                                 borderBottomLeftRadius: "5px",
-                                                fontSize: "12px",
+                                                fontSize: "16px",
                                                 fontWeight: "bold",
                                             }}>
                                             {job.Type || "N/A"}
@@ -95,16 +95,16 @@ export default function InternshipCards() {
                                             )}
                                         </ul>
 
-                                        <p className="mt-1" style={{ color: "#00a99d" }}>SALARY:</p>
+                                        <p className="mt-4 mt-auto d-flex justify-content-between align-items-center mb-0" style={{ color: "#00a99d", marginTop:"20px" }}>SALARY:</p>
                                         <p className="fw-bold text-white" style={{ color: "#00a99d", marginBottom: "0" }}>{job.Salary ? `${job.Salary}` : "Not specified"}</p>
 
                                         <div className="mt-auto d-flex justify-content-between align-items-center mb-0" style={{ width: "100%" }}>
-                                            <p className="d-flex align-items-center" style={{ color: "#00a99d" }}>
+                                            <p className="d-flex align-items-center" style={{ color: "#00a99d",fontWeight: "bolder", fontSize: "20px", color: "#00c3d1"}}>
                                                 <span className="me-2"><ImLocation /></span>{job.Location || "Location not available"}
                                             </p>
                                             <Link href={`/jobDetailsPage?id=${job.id}`}>
                                                 <button className="btn btn-primary"
-                                                    style={{ backgroundColor: "#00a99d", borderRadius: "0 0 35px 0", padding: "10px 25px", color: "black" }}>
+                                                    style={{  borderRadius: "0 0 20px 0", padding: "15px 25px",  fontSize: "20px", fontWeight: "bold" }}>
                                                     Explore More
                                                 </button>
                                             </Link>
@@ -134,6 +134,8 @@ export default function InternshipCards() {
                     display: flex;
                     flex-direction: column;
                     flex-grow: 1;
+                    padding-left: 1.25rem;
+                    padding-top: 1.25rem;
                 }
 
                 .card-body ul {
@@ -155,20 +157,21 @@ export default function InternshipCards() {
                     font-weight: bold;
                 }
 
-                .card-body .btn {
-                    background: #00a99d;
-                    color: white;
-                    border: none;
-                    border-radius: 0.5rem;
-                    font-weight: bold;
-                    font-size: 0.875rem;
-                    cursor: pointer;
-                    transition: background-color 0.3s;
-                }
+              .card-body .btn {
+    background: black;
+    color: #00c3d1;
+    border: 1px solid #00a99d;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
 
-                .card-body .btn:hover {
-                    background: #00a99d;
-                }
+.card-body .btn:hover {
+    background: #00a99d;
+    color: white; }
+
                 
             `}</style>
         </Layout>

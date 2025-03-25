@@ -60,7 +60,7 @@ const Card = () => {
             overflow: 'hidden'
         },
         container: {
-            width: '80vw',
+            width: '100vw',
             maxWidth: '1400px',
             margin: '0 auto',
             padding: '0 2rem'
@@ -88,7 +88,7 @@ const Card = () => {
         },
         cardWrapper: {
             width: 'calc(25% - 1.5rem)',
-            minWidth: '280px'
+            minWidth: '380px'
         },
         card: {
             position: 'relative',
@@ -203,7 +203,7 @@ const Card = () => {
                                         <div className="card-image" style={styles.cardImage}>
                                             <img
                                                 src={getImageUrl(product)}
-                                                alt={product.title || "Product Image"}
+                                                alt={product.img_title || "Product Image"}
                                                 style={{ 
                                                     width: '100%',
                                                     height: '100%',
@@ -298,6 +298,34 @@ const Card = () => {
           }
           .card-grid {
             gap: 1rem;
+          }
+        }
+
+        @media (max-width: 375px) {
+          .card-wrapper {
+            width: 100%;
+          }
+          .container {
+            width: 100vw;
+            padding: 0 0.5rem;
+            margin: 0;
+          }
+          .section {
+            padding: 2rem 0;
+            width: 100vw;
+            overflow-x: hidden;
+          }
+          .header {
+            margin-bottom: 1.5rem;
+          }
+          .title {
+            font-size: 1.5rem;
+          }
+          .subtitle {
+            font-size: 0.875rem;
+          }
+          .card-grid {
+            gap: 0.5rem;
           }
         }
       `}</style>

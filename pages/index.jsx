@@ -222,7 +222,7 @@ const Index2 = () => {
       </section>
       
       {/* What We Provide start */}
-      <ServicesSection />
+      {/* <ServicesSection /> */}
       <section className="what-we-provide-area pt-70 rpt-40 rel z-1">
         <div className="container container-1290 ">
           {/* <div className="headline-area bgc-primary pt-80 pb-65"> */}
@@ -236,7 +236,7 @@ const Index2 = () => {
             </div>
           </div> */}
           <div className="row">
-            <div className="col-xl-4 col-md-6">
+            <div className="col-xl-4 col-md-6 col-sm-12">
               <div
                 className="wow fadeInUp delay-0-2s"
                 style={{
@@ -244,7 +244,7 @@ const Index2 = () => {
                   backgroundSize: "contain", // Ensures the full image is visible
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
-                  width: "400px",
+                  width: "100%",
                   height: "400px", // Adjust as needed
                   display: "flex",
                   alignItems: "center",
@@ -256,7 +256,7 @@ const Index2 = () => {
               ></div>
             </div>
 
-            <div className="col-xl-4 col-md-6">
+            <div className="col-xl-4 col-md-6 col-sm-12">
               <div
                 className="  wow fadeInUp delay-0-2s"
                 style={{
@@ -264,7 +264,7 @@ const Index2 = () => {
                   backgroundSize: "contain", // Ensures the full image is visible
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
-                  width: "400px",
+                  width: "100%",
                   height: "400px",
                   display: "flex",
                   alignItems: "center",
@@ -274,7 +274,7 @@ const Index2 = () => {
                 }}
               ></div>
             </div>
-            <div className="col-xl-4 col-md-6">
+            <div className="col-xl-4 col-md-6 col-sm-12">
               <div
                 className="  wow fadeInUp delay-0-2s"
                 style={{
@@ -282,7 +282,7 @@ const Index2 = () => {
                   backgroundSize: "contain", // Ensures the full image is visible
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
-                  width: "400px",
+                  width: "100%",
                   height: "400px",
                   display: "flex",
                   alignItems: "center",
@@ -295,7 +295,7 @@ const Index2 = () => {
 
           </div>
           <div className="row mt-4">
-            <div className="col-xl-4 col-md-6">
+            <div className="col-xl-4 col-md-6 col-sm-12">
               <div
                 className="  wow fadeInUp delay-0-2s"
                 style={{
@@ -303,7 +303,7 @@ const Index2 = () => {
                   backgroundSize: "contain", // Ensures the full image is visible
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
-                  width: "400px",
+                  width: "100%",
                   height: "400px",
                   display: "flex",
                   alignItems: "center",
@@ -313,7 +313,7 @@ const Index2 = () => {
                 }}
               ></div>
             </div>
-            <div className="col-xl-4 col-md-6">
+            <div className="col-xl-4 col-md-6 col-sm-12">
               <div
                 className="  wow fadeInUp delay-0-2s"
                 style={{
@@ -321,7 +321,7 @@ const Index2 = () => {
                   backgroundSize: "contain", // Ensures the full image is visible
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
-                  width: "400px",
+                  width: "100%",
                   height: "400px",
                   display: "flex",
                   alignItems: "center",
@@ -331,7 +331,7 @@ const Index2 = () => {
                 }}
               ></div>
             </div>
-            <div className="col-xl-4 col-md-6">
+            <div className="col-xl-4 col-md-6 col-sm-12">
               <div
                 className="  wow fadeInUp delay-0-2s"
                 style={{
@@ -339,7 +339,7 @@ const Index2 = () => {
                   backgroundSize: "contain", // Ensures the full image is visible
                   backgroundRepeat: "no-repeat",
                   backgroundPosition: "center",
-                  width: "400px",
+                  width: "100%",
                   height: "400px",
                   display: "flex",
                   alignItems: "center",

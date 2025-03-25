@@ -1,90 +1,44 @@
-import React from "react";
+import React from 'react';
 
-const ServicesSection = () => {
-  const cardImages = [
-    "/assets/images/services/Card.svg",
-    "/assets/images/services/Card-1.svg",
-    "/assets/images/services/Card-2.svg",
-    "/assets/images/services/Card-3.svg",
-    "/assets/images/services/Card-4.svg",
-    "/assets/images/services/Card-5.svg",
-  ];
-
+const InternshipCard = () => {
   return (
-    <section className="what-we-provide-area">
-      <div className="container">
-        <div className="row">
-          {cardImages.map((image, index) => (
-            <div className="col" key={index}>
-              <div className="service-card" style={{ backgroundImage: `url(${image})` }}></div>
-            </div>
-          ))}
+    <div className="relative bg-[#00c3d1] text-white w-full max-w-[380px] rounded-[10px] p-4 border border-[#2C2C2C]">
+      <div className="absolute top-4 right-4 text-teal-400 uppercase text-xs">
+        INTERNSHIP
+      </div>
+      
+      <div className="mt-6">
+        <h2 className="text-[17px] font-medium mb-4">Customer satisfaction</h2>
+        
+        <div className="mb-4">
+          <h3 className="text-[#8F8F8F] text-xs mb-2">Skills Required:</h3>
+          <div className="space-y-1">
+            <p className="text-xs">English Proficiency (Spoken)</p>
+            <p className="text-xs">English Proficiency (Written)</p>
+          </div>
+        </div>
+        
+        <div className="mb-4">
+          <h3 className="text-[#8F8F8F] text-xs mb-2">SALARY:</h3>
+          <div className="text-base font-medium">₹ 15,000 /month</div>
+        </div>
+        
+        <div className="flex items-center justify-between">
+          <div className="flex items-center space-x-1 text-[#8F8F8F]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M8 1.33334L2 5.33334V14.6667H14V5.33334L8 1.33334Z" stroke="#8F8F8F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+              <path d="M6 14.6667V8H10V14.6667" stroke="#8F8F8F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+            </svg>
+            <span className="text-xs">Noida</span>
+          </div>
+          
+          <button className="bg-teal-500 text-white px-4 py-2 rounded-[5px] text-xs">
+            Explore More
+          </button>
         </div>
       </div>
-
-      <style jsx>{`
-        /* 🔹 Section Styling */
-        .what-we-provide-area {
-          padding-top: 70px;
-          position: relative;
-          z-index: 1;
-        }
-
-        /* 🔹 Container */
-        .container {
-          max-width: 1290px;
-          margin: 0 auto;
-          padding: 0 20px;
-        }
-
-        /* 🔹 Row */
-        .row {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-          gap: 20px;
-        }
-
-        /* 🔹 Service Card */
-        .service-card {
-          width: 100%;
-          max-width: 400px;
-          height: 400px;
-          background-size: contain;
-          background-repeat: no-repeat;
-          background-position: center;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          border-radius: 15px;
-        }
-
-        /* 🔹 Mobile (iPhone SE & Small Devices) */
-        @media (max-width: 576px) {
-          .service-card {
-            max-width: 100%;
-            height: 250px;
-          }
-        }
-
-        /* 🔹 Tablets & Medium Screens */
-        @media (min-width: 577px) and (max-width: 991px) {
-          .service-card {
-            max-width: 100%;
-            height: 300px;
-          }
-        }
-
-        /* 🔹 Large Screens (Desktops) */
-        @media (min-width: 992px) {
-          .service-card {
-            max-width: 350px;
-            height: 350px;
-          }
-        }
-      `}</style>
-    </section>
+    </div>
   );
 };
 
-export default ServicesSection;
+export default InternshipCard;

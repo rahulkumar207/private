@@ -82,10 +82,18 @@ const JobDetails = () => {
                       <h2>{job.Title}</h2>
                     </div>
                     <span className="sub-title mb-15" style={{ color: "#00c3d1", fontSize: "18px" }}>Skills Required: </span>
-                    <ul className="list-style-three pt-25 pb-20">
-                      {Array.isArray(job.SKILLS) && job.SKILLS.map((skill, index) => (
-                        <li key={index}>{skill}</li>
-                      ))}
+                    <ul className="pt-25 pb-20">
+                      {Array.isArray(job.SKILLS) && job.SKILLS.length > 0 ? (
+                                                job.SKILLS.map((skill, idx) => (
+                                                    <li key={idx}>• {skill}</li>
+                                                ))
+                                            ) : typeof job.SKILLS === 'string' ? (
+                                                job.SKILLS.split(/,|\n/).map((skill, idx) => (
+                                                    <li key={idx}>• {skill.trim()}</li>
+                                                ))
+                                            ) : (
+                                                <li>No skills listed</li>
+                                            )}
                     </ul>
                     <div className="about-btns">
                       <h5>Location: {job.Location}</h5>
@@ -102,16 +110,26 @@ const JobDetails = () => {
           </div>
         </div>
         <div className="container-fluid mt-4">
-          <h5>{job.Description}</h5>
-          <p>Key Responsibilities:</p>
+          <h5></h5>
+        </div>
+        <div className="container-fluid mt-4">
+        <h5 style={{marginTop: "50px"}}>Key Responsibilities:</h5>
           <ul>
-            {Array.isArray(job.jobResponsibilities) && job.jobResponsibilities.map((responsibility, index) => (
-              <li key={index}>{responsibility}</li>
-            ))}
+            {Array.isArray(job.Description) ? (
+              job.Description.map((desc, idx) => (
+                <li key={idx}>{desc}</li>
+              ))
+            ) : typeof job.Description === 'string' ? (
+              job.Description.split(/,|\n/).map((desc, idx) => (
+                <li key={idx}>{desc.trim()}</li>
+              ))
+            ) : (
+              <li>No description available</li>
+            )}
           </ul>
         </div>
-        <div className="container-fluid mt-4" style={{ marginTop: 200 }}>
-          <div className="row justify-content-center">
+        <div className="container-fluid mt-4" >
+          <div className="row justify-content-center"style={{ marginTop: '100px' }}>
             <div className="col-md-5">
               <div className="p-4 rounded" style={{ border: '2px solid #00c3d1', borderRadius: '15px' }}>
                 <h3 className="text-white">Salary: {job.Salary}</h3>

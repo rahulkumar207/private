@@ -21,7 +21,7 @@ const Contact = () => {
                   </div>
                 </div>
                 <div className="row gap-80 pb-30">
-                  <div className="col-sm-6">
+                  <div className="col-sm-8">
                     <div className="our-location-address mb-40">
                       <h5>Noida</h5>
                       <p>
@@ -43,7 +43,7 @@ const Contact = () => {
                       </a>
                     </div>
                   </div>
-                  <div className="col-sm-6">
+                  {/* <div className="col-sm-6">
                     <div className="our-location-address mb-40">
                       <h5>Australia</h5>
                       <p>67 One State Road, 2nd Block Melbourne, Australia</p>
@@ -55,7 +55,7 @@ const Contact = () => {
                         <i className="fas fa-phone" /> +000 (123) 456 88
                       </a>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
                 <h4>Follow Us</h4>
                 <div className="social-style-two pt-15">

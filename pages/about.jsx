@@ -47,36 +47,7 @@ const About = () => {
               <div className="client-text text-lg-start text-center mt-40 pb-50">
               CMT AI is a leading provider of affordable AI solutions in India. We are committed to democratizing AI by offering cost-effective, high-quality software that empowers businesses of all sizes. Our innovative AI-powered tools and services are designed to streamline operations, enhance decision-making, and drive growth.
               </div>
-              <div className="row">
-                <div className="col-xl-10">
-                  <div className="client-logo-wrap">
-                    <Link legacyBehavior href="/contact">
-                      <a className="client-logo-item">
-                        <img
-                          src="assets/images/client-logos/client-logo-two1.png"
-                          alt="Client Logo"
-                        />
-                      </a>
-                    </Link>
-                    <Link legacyBehavior href="/contact">
-                      <a className="client-logo-item">
-                        <img
-                          src="assets/images/client-logos/client-logo-two2.png"
-                          alt="Client Logo"
-                        />
-                      </a>
-                    </Link>
-                    <Link legacyBehavior href="/contact">
-                      <a className="client-logo-item">
-                        <img
-                          src="assets/images/client-logos/client-logo-two3.png"
-                          alt="Client Logo"
-                        />
-                      </a>
-                    </Link>
-                  </div>
-                </div>
-              </div>
+            
             </div>
             <div className="col-lg-6 wow fadeInRight delay-0-2s">
               <div className="video-year text-lg-end text-center rel">
